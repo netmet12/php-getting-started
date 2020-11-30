@@ -19,7 +19,7 @@ class ExampleController extends Controller
 
     public function logHappy(Request $request)
     {
-        Log::warning($request);
+        Log::notice($request);
 
         return response()->json($request);
     }
