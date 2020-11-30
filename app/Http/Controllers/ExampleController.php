@@ -2,21 +2,30 @@
 
 namespace App\Http\Controllers;
 
+use Log;
+use Illuminate\Http\Request;
+
+
 class ExampleController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //
-    }
+
 
     public function logAll()
     {
-        console.log('cool!');
+        Log::warning('Showing user');
+
+        return response()->json('test2');
+    }
+
+    public function logHappy(Request $request)
+    {
+        Log::warning($request);
+
+        return response()->json($request);
+    }
+
+    private function testLog(){
+        console.log('fadsf');
     }
 
     //
